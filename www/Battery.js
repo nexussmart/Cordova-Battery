@@ -1,7 +1,7 @@
 var exec = require("cordova/exec");
 module.exports = {
     getLevel: function(success, failure) {
-        /*var self = this;
+        var self = this;
         success = success || function() {};
         failure = failure || function() {};
 
@@ -9,10 +9,10 @@ module.exports = {
             if(self.level) {
                 success.apply(self, level);
             }
-        };*/
+        };
 
         exec(
-            success || function() {},
+            succCallback,
             failure || function() {},
             'BatteryPlugin',
             'getLevel',
@@ -20,4 +20,3 @@ module.exports = {
         );
     }
 };
-
