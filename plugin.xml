@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="org.blueshift.cordova.battery"
+        version="0.3.6">
+    <name>CDVBattery</name>
+    <description>Battery</description>
+    <license>MIT</license>
+    <keywords>battery, level, status</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/Battery.js" name="Battery">
+        <clobbers target="plugins.battery" />
+    </js-module>
+
+    <platform name="android">
+        <source-file src="src/android/BatteryPlugin.java" target-dir="src/com/blueshift/cordova/battery" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Battery">
+                <param name="ios-package" value="CordovaBattery"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/CordovaBattery.m" />
+        <header-file src="src/ios/CordovaBattery.h" />
+    </platform>
+</plugin>
