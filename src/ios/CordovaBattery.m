@@ -15,9 +15,8 @@
 
     NSDictionary *jsonObj = [   [NSDictionary alloc]
                                 initWithObjectsAndKeys :
-                                    percent, @"batteryPercent",
+                                    [NSNumber numberWithInteger: percent], @"batteryPercent",
                                     nil
-
                             ];
     CDVPluginResult *pluginResult = [
                                         CDVPluginResult
