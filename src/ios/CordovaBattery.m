@@ -13,7 +13,19 @@
     float currentLevel = [currentDevice batteryLevel];
     float percent = currentLevel * 100;
 
-    [self.commandDelegate sendPluginResult:percent callbackId:command.callbackId];
+    NSDictionary *jsonObj = [   [NSDictionary alloc]
+                                initWithObjectsAndKeys :
+                                    percent, @"batteryPercent",
+                                    nil
+
+                            ];
+    CDVPluginResult *pluginResult = [
+                                        CDVPluginResult
+                                        resultWithStatus : CDVCommandStatus_OK
+                                         messageAsDictionary : jsonObj
+                                    ];
+
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 @end

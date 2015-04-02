@@ -25,7 +25,7 @@ public class BatteryPlugin extends CordovaPlugin {
         if(ACTION_GET_LEVEL.equalsIgnoreCase(action)) {
             int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-            float batteryPct = level / (float)scale;
+            float batteryPct = (level / (float)scale) * 100;
 
             Log.i(TAG, "Battery Level Requested " + batteryPct);
             result = true;
