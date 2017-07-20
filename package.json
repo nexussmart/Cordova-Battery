@@ -1,0 +1,19 @@
+{
+  "name": "cordova-battery",
+  "version": "1.0.0",
+  "description": "Very simple cordova plugin to get the current battery level for android / ios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexussmart/Cordova-Battery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nexussmart/Cordova-Battery/issues"
+  },
+  "homepage": "https://github.com/nexussmart/Cordova-Battery#readme"
+}
